@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
   <script src="bower_components/angular/angular.min.js" charset="utf-8"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script src="js/main.js" charset="utf-8"></script>
 </head>
 <body ng-app="ninteenfiftysix" ng-controller="mainCtrl" ng-init="init()">
@@ -17,13 +18,13 @@
       <h2 ng-if="!ready">Loading...</h2>
       <div class="phrase-container" ng-repeat="key in dict_keys">
         <div class="phrase-card" ng-class="key === active ? 'phrase-active' : ''">
-          <a href="" ng-if="!(active === key)" ng-click="onClick(key)">{{key}}</a>
+          <a href="#" ng-if="!(active === key)" ng-click="onClick(key)">{{key}}</a>
           <strong ng-if="active === key">{{resolve(key)}}</strong>
         </div>
       </div>
   </div>
   <div class="control-panel">
-    <strong>Autoplay <a href="" ng-click="toggleAutoPlay()">{{autoPlayState?'On':'Off'}}</a></strong>
+    <strong>Autoplay <a href="#" ng-click="toggleAutoPlay()">{{autoPlayState?'On':'Off'}}</a></strong>
   </div>
 </body>
 </html>
