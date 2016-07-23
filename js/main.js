@@ -1,12 +1,14 @@
 var app = angular.module('ninteenfiftysix',[]);
 var COL_NAMES = ['1','5','6','9'];
 
-app.controller('mainCtrl', function($scope, $http, $rootScope) {
+app.controller('mainCtrl', function($scope, $http, $rootScope, $interval) {
   $scope.data = [];
   $scope.dict = [];
   $scope.dict_keys = [];
   $scope.ready = false;
   $scope.active = null;
+  $scope.autoplayHandler = null;
+  $scope.autoPlayState = true;
 
   $scope.init = function(){
     console.log("YOLO");
@@ -15,10 +17,29 @@ app.controller('mainCtrl', function($scope, $http, $rootScope) {
       $scope.ready = true;
       $scope.dict = $scope.makeDict($scope.data);
       $scope.dict_keys = Object.keys($scope.dict);
-      console.log($scope.dict);
+      if ($scope.autoPlayState){
+          $scope.startAutoPlay();
+      }
     }).error(function(){
       alert("Network Error");
     });
+  }
+
+  $scope.startAutoPlay = function(){
+    $interval.cancel($scope.autoplayHandler);
+    $scope.autoplayHandler = $interval(function () {
+      var rands = Math.floor((Math.random() * $scope.data.length) + 0)
+      $scope.active = $scope.dict_keys[rands];
+    }, 3000);
+  }
+
+  $scope.toggleAutoPlay = function(){
+    $scope.autoPlayState = !$scope.autoPlayState;
+    if ($scope.autoPlayState){
+      $scope.startAutoPlay();
+    }else{
+      $interval.cancel($scope.autoplayHandler);
+    }
   }
 
   $scope.onClick = function(key){

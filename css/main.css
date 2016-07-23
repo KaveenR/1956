@@ -14,3 +14,11 @@
   background-color: #ffe6e6;
   transition: 1s;
 }
+
+.control-panel {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
