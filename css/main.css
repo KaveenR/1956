@@ -12,6 +12,5 @@
 }
 .phrase-active {
   background-color: #ffe6e6;
-  clear: both;
-  width: 100%;
+  transition: 1s;
 }
