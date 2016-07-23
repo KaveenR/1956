@@ -39,6 +39,7 @@ app.controller('mainCtrl', function($scope, $http, $rootScope, $interval) {
       $scope.startAutoPlay();
     }else{
       $interval.cancel($scope.autoplayHandler);
+      $scope.active = null;
     }
   }
 
