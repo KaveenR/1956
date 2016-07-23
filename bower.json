@@ -1,0 +1,22 @@
+{
+  "name": "1956",
+  "authors": [
+    "Kaveen Rodrigo <u.k.k.rodirgo@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.6"
+  }
+}
