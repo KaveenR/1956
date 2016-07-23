@@ -14,6 +14,7 @@
 <body ng-app="ninteenfiftysix" ng-controller="mainCtrl" ng-init="init()">
   <div class="container">
       <h1>1956</h1>
+      <h2 ng-if="!ready">Loading...</h2>
       <div class="phrase-container" ng-repeat="key in dict_keys">
         <div class="phrase-card" ng-class="key === active ? 'phrase-active' : ''">
           <a href="" ng-if="!(active === key)" ng-click="onClick(key)">{{key}}</a>
