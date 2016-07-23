@@ -7,16 +7,18 @@
   <title>1956</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
   <script src="bower_components/angular/angular.min.js" charset="utf-8"></script>
   <script src="js/main.js" charset="utf-8"></script>
 </head>
 <body ng-app="ninteenfiftysix" ng-controller="mainCtrl" ng-init="init()">
   <div class="container">
       <h1>1956</h1>
-      <div class="all-words">
-        <ul ng-repeat="key in dict_keys">
-          <li><a href="#" ng-click="resolve(key)">{{key}}</a></li>
-        </ul>
+      <div class="phrase-container" ng-repeat="key in dict_keys">
+        <div class="phrase-card" ng-class="key === active ? 'phrase-active' : ''">
+          <a href="" ng-if="!(active === key)" ng-click="onClick(key)">{{key}}</a>
+          <strong ng-if="active === key">{{resolve(key)}}</strong>
+        </div>
       </div>
   </div>
 </body>

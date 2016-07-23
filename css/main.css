@@ -1,0 +1,17 @@
+.container {
+  margin : 35px;
+}
+.phrase-container{
+  width: 100%
+}
+.phrase-card{
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin: 10px;
+  float: left;
+}
+.phrase-active {
+  background-color: #ffe6e6;
+  clear: both;
+  width: 100%;
+}

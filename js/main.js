@@ -6,6 +6,7 @@ app.controller('mainCtrl', function($scope, $http, $rootScope) {
   $scope.dict = [];
   $scope.dict_keys = [];
   $scope.ready = false;
+  $scope.active = null;
 
   $scope.init = function(){
     console.log("YOLO");
@@ -20,11 +21,15 @@ app.controller('mainCtrl', function($scope, $http, $rootScope) {
     });
   }
 
+  $scope.onClick = function(key){
+    $scope.active = key;
+  }
+
   $scope.resolve = function(key){
     var cur = $scope.dict[key];
     var rands = Math.floor((Math.random() * cur.length) + 0)
     var current_entry = $scope.data[cur[rands]];
-    alert($scope.entryTOS(current_entry));
+    return $scope.entryTOS(current_entry);
   }
 
   $scope.entryTOS = function(entry){
