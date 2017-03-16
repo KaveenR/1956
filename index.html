@@ -15,6 +15,8 @@
 <body ng-app="ninteenfiftysix" ng-controller="mainCtrl" ng-init="init()">
   <div class="container">
       <h1>1956</h1>
+      <h4 class="text-muted">Conceptual poetry by <a href="http://imaadmajeed.com/">Imaad Majeed</a> bought to life by <a href="http://kaveenrodrigo.com">Kaveen Rodrigo</a>.</h3>
+      <hr>
       <h2 ng-if="!ready">Loading...</h2>
       <div class="phrase-container" ng-repeat="key in dict_keys">
         <div class="phrase-card" ng-class="key === active ? 'phrase-active' : ''">
